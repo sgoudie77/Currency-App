@@ -1,4 +1,112 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  /* color: gold; */
+  color: #36bde8;
+}
+
+/* backgroundColor: "#EEBC1D" */
+
+.news-feed {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 2rem .5rem;
+}
+.news-feed h2 {
+  text-align: center;
+  /* margin-bottom: 1rem; */
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+.news-feed-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin-top: .5rem;
+}
+.news-card {
+  background-color: #26272b;
+  box-shadow: 0px 0px 12px #18191b;
+  border-radius: 2px;
+  /* width: 31.4%; */
+  width: 400px;
+  height: auto;
+  margin: .5rem;
+  padding: .5rem .75rem;
+}
+
+.news-feed h2 {
+  color: #ffffff;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: .5rem;
+} 
+
+.crypto-news-title {
+  /* color: white; */
+  color: white;
+  margin: 0;
+  font-weight: 500;
+}
+.crypto-news-title-sub {
+  display: flex;
+  /* color: gray; */
+  justify-content: space-between;
+  margin: 0 0 .5rem 0;
+  padding: 0 0 .25rem 0;
+  height: auto;
+  border-bottom: 1px solid gray;
+}
+.crypto-news-source, .crypto-news-date {
+  margin: 0;
+  color: #c7c7c7;
+  padding: .5rem 0;
+}
+.crypto-news-source {
+  font-style: italic;
+}
+.crypto-news-description {
+  color: white;
+  margin: 0;
+}
+.crypto-news-link {
+  /* text-decoration: none; */
+  color: #36bde8;
+  border: 1px solid gray;
+  padding: .25rem .5rem;
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+}
+.crypto-news-link:hover {
+  background-color: white;
+  border: 1px solid gray;
+  color: #26272b;
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+}
+.crypto-news-link-container {
+  margin: 1rem 0;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +143,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
