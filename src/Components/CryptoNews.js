@@ -44,7 +44,7 @@ const CryptoNews = () => {
                     </div>
                     <p className='crypto-news-description'>{article.description}</p>
                   <div className='crypto-news-link-container'>
-                        <a className='crypto-news-link' href={article.link} target="_blank">Read More...</a>
+                        <a className='crypto-news-link' href={article.link} target="_blank" rel="noreferrer">Read More...</a>
                   </div>
               </div>))}
             </div>
