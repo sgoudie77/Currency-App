@@ -12,21 +12,20 @@ export function numberWithCommas(x) {
 }
 
 const CoinsTable = () => {
-    const [coins, setCoins] = useState([]);
-    const [loading, setLoading] = useState(false);
+    
     const [search, setSearch] = useState("");
     const [page, setPage] = useState(1);
     const history = useHistory(); 
   
-    const { currency, symbol } = CryptoState();
+    const { currency, symbol, coins, loading, fetchCoins } = CryptoState();
 
-    const fetchCoins = async () => {
-        setLoading(true);
-        const { data } = await axios.get(CoinList(currency));
+    // const fetchCoins = async () => {
+    //     setLoading(true);
+    //     const { data } = await axios.get(CoinList(currency));
 
-        setCoins(data);
-        setLoading(false);
-    };
+    //     setCoins(data);
+    //     setLoading(false);
+    // };
 
     console.log(coins);
 
@@ -93,7 +92,7 @@ const CoinsTable = () => {
                         <LinearProgress style={{ backgroundColor: "#36bde8" }} />
                     ) : (
                         <Table>
-                            <TableHead style={{ backgroundColor: "#2454bc" }}>
+                            <TableHead style={{ backgroundColor: "#36bde8" }}>
                             <TableRow>
                                 {["Coin", "Price", "24h Change", "Market Cap"].map((head) => 
                                     <TableCell

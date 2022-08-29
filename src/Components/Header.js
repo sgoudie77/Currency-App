@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { CryptoState } from '../CryptoContext';
+import AuthModal from './Authentication/AuthModal';
+import UserSidebar from './Authentication/UserSidebar';
 
 
 const useStyles = makeStyles(() => ({
@@ -21,15 +23,18 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     justifyContent: "space-between",
     zIndex: 5,
-  }
-}))
+  },
+  headerInfo: {
+    display: "flex"
+  },
+}));
 
 
 const Header = () => {
   
   const classes = useStyles();
   const history = useHistory();
-  const { currency, setCurrency } = CryptoState();
+  const { currency, setCurrency, user } = CryptoState();
 
   console.log(currency);
   
@@ -59,7 +64,7 @@ const Header = () => {
               <div>
                   <img src="logo.png" alt="logo" onClick={() => history.push('/')} className={classes.logo} />
               </div>
-              
+              <div className={classes.headerInfo}>
               <Select
                   variant="outlined" 
                   style={{
@@ -73,6 +78,10 @@ const Header = () => {
                 <MenuItem value={"USD"}>USD</MenuItem>
                 <MenuItem value={"EUR"}>EUR</MenuItem>
               </Select>
+
+              {user ? <UserSidebar /> : <AuthModal />}
+
+              </div>
             </Toolbar>
         </Container>
     </AppBar>
